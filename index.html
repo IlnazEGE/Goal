@@ -44,9 +44,9 @@
 		</div>
 	</div>
 </header>		<main class="main">
-			<div class="message">
+			<!-- <div class="message">
 				<div class="message__text">Сайт в стадии разработки...</div>
-			</div>
+			</div> -->
 			<section class="hero">
 				<div class="swiper-container hero__slider">
 					<div class="swiper-wrapper">
@@ -667,7 +667,10 @@
 	<div class='container'>
 		<div class="footer__top top-footer">
 			<a href="" class="top-footer__logo">
-				<img src="img/footer/logo.png" alt="">
+				<picture>
+					<source srcset="img/footer/logo.png" media="(min-width: 992px)">
+					<img src="img/logo.png" alt="">
+				</picture>
 			</a>
 			<div class="top-footer__bottom">
 				<div class="top-footer__row">
@@ -695,7 +698,7 @@
 							<li><a href="" class="top-footer__link">Блог</a></li>
 						</ul>
 					</div>
-					<div class="top-footer__column">
+					<div class="top-footer__column top-footer__column_move">
 						<ul class="top-footer__list">
 							<li><a href="" class="top-footer__link">Образовательный портал</a></li>
 							<li><a href="" class="top-footer__link">Официальная информация</a></li>
@@ -710,7 +713,7 @@
 			<div class="bottom-footer__row">
 				<small class="bottom-footer__copy">©2021 Цель Все права защищены</small>
 				<a href="" class="bottom-footer__polit">Политика конфиденциальности</a>
-				<div class="bottom-footer__social">
+				<div data-move="top-footer__column_move, 1, 992" class="bottom-footer__social">
 					<ul class="bottom-footer__list">
 						<li>
 							<a href="" class="bottom-footer__link">
