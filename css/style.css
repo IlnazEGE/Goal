@@ -1334,9 +1334,9 @@ body.ie .ibg img {
 	}
 }
 .hero .swiper-scrollbar-hero {
-	height: 5px;
+	height: 5px !important;
 	max-width: 640px;
-	background: rgba(48, 55, 58, 0.2);
+	background: rgba(48, 55, 58, 0.2) !important;
 }
 @media (max-width: 991.98px) {
 	.hero .swiper-scrollbar-hero {
@@ -1344,7 +1344,7 @@ body.ie .ibg img {
 	}
 }
 .hero .swiper-scrollbar-hero .swiper-scrollbar-drag {
-	background: #f5722a;
+	background: #f5722a !important;
 }
 .hero .hero-swiper-pagination {
 	margin: 0px 0px 20px 0px;
