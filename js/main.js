@@ -43,6 +43,7 @@ const heroSlider = new Swiper('.hero__slider', {
 	},
 });
 
+
 function ibg() {
 	if (isIE()) {
 		let ibg = document.querySelectorAll(".ibg");
