@@ -42,18 +42,80 @@ const heroSlider = new Swiper('.hero__slider', {
 		el: '.swiper-scrollbar-hero',
 	},
 });
+const lessonsSlider = new Swiper('.lessons__slider', {
+	// If we need pagination
 
-
-function ibg() {
-	if (isIE()) {
-		let ibg = document.querySelectorAll(".ibg");
-		for (var i = 0; i < ibg.length; i++) {
-			if (ibg[i].querySelector('img') && ibg[i].querySelector('img').getAttribute('src') != null) {
-				ibg[i].style.backgroundImage = 'url(' + ibg[i].querySelector('img').getAttribute('src') + ')';
-			}
+	pagination: {
+		el: '.hero-swiper-pagination',
+		type: 'fraction',
+	},
+	breakpoints: {
+		// when window width is >= 640px
+		320: {
+			slidesPerView: 1,
+		},
+		768: {
+			slidesPerView: 2,
 		}
+	},
+	// And if we need scrollbar
+	scrollbar: {
+		el: '.swiper-scrollbar-hero',
+	},
+});
+
+
+const leadersSlider = new Swiper('.leaders__slider', {
+	// If we need pagination	
+	// spaceBetween: 40,
+	breakpoints: {
+		// when window width is >= 640px
+		767: {
+			slidesPerView: 2,
+			// spaceBetween: 60,
+		},
+		992: {
+			slidesPerView: 3,
+			// spaceBetween: 20,
+		}
+	},
+	pagination: {
+		el: '.hero-swiper-pagination',
+		type: 'fraction',
+	},
+
+	// And if we need scrollbar
+	scrollbar: {
+		el: '.swiper-scrollbar-hero',
+	},
+});
+
+
+$.each($('.spoller.active'), function (index, val) {
+	$(this).next().show();
+});
+$('body').on('click', '.spoller', function (event) {
+	if ($(this).hasClass('mob') && !isMobile.any()) {
+		return false;
 	}
-}
-ibg();
+
+	if ($(this).parents('.one').length > 0) {
+		$(this).parents('.one').find('.spoller').not($(this)).removeClass('active').next().slideUp(300);
+		$(this).parents('.one').find('.spoller').not($(this)).parent().removeClass('active');
+	}
+
+	if ($(this).hasClass('closeall') && !$(this).hasClass('active')) {
+		$.each($(this).closest('.spollers').find('.spoller'), function (index, val) {
+			$(this).removeClass('active');
+			$(this).next().slideUp(300);
+		});
+	}
+	$(this).toggleClass('active').next().slideToggle(300, function (index, val) {
+		if ($(this).parent().find('.slick-slider').length > 0) {
+			$(this).parent().find('.slick-slider').slick('setPosition');
+		}
+	});
+	return false;
+});
 
 });
