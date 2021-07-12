@@ -3390,12 +3390,12 @@ body.lock {
 .content ul li:before {
 	content: "- ";
 }
-.content__scroll {
-	width: 992px;
-	overflow-x: scroll;
+@media (max-width: 991.98px) {
+	.content__scroll {
+		width: 992px;
+	}
 }
 .content table {
-	overflow: scroll;
 	margin: 20px 0;
 	width: 100%;
 	border-collapse: collapse;
@@ -3425,6 +3425,55 @@ body.lock {
 }
 .content table tbody td:not(:last-child) {
 	border-right: 1px solid rgba(48, 55, 58, 0.2);
+}
+
+.programs-about_corp {
+	background: #f4f4f4 !important;
+}
+.programs-about_corp p {
+	margin: 0px 0px 20px 0px;
+}
+.programs-about_corp h3 {
+	font-weight: 700;
+	margin: 0px 0px 20px 0px;
+	font-size: 24px;
+	line-height: 160%;
+	color: #645ddd;
+}
+
+.example-corp {
+	padding: 100px 0 95px 0;
+}
+@media (max-width: 767.98px) {
+	.example-corp {
+		padding: 60px 0;
+	}
+}
+.example-corp__title {
+	margin: 0px 0px 20px 0px;
+}
+.example-corp__descr {
+	font-size: 18px;
+	line-height: 160%;
+	margin: 0px 0px 20px 0px;
+	color: #30373a;
+	display: block;
+}
+@media (max-width: 991.98px) {
+	.example-corp__descr {
+		font-size: 16px;
+	}
+}
+@media (max-width: 479.98px) {
+	.example-corp__image {
+		height: 180px;
+	}
+	.example-corp__image img {
+		height: 100%;
+	}
+}
+.example-corp__image img {
+	width: 100%;
 }
 
 .message {
