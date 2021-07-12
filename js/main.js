@@ -11,84 +11,95 @@ if (iconMenu) {
 	});
 }
 
-const reviewsSlider = new Swiper('.reviews__slider', {
-	// If we need pagination
-	pagination: {
-		el: '.swiper-pagination',
-		type: 'fraction',
-	},
-
-	// Navigation arrows
-	navigation: {
-		nextEl: '.swiper-button-next',
-		prevEl: '.swiper-button-prev',
-	},
-
-	// And if we need scrollbar
-	scrollbar: {
-		el: '.swiper-scrollbar',
-	},
-});
-
-const heroSlider = new Swiper('.hero__slider', {
-	// If we need pagination
-	pagination: {
-		el: '.hero-swiper-pagination',
-		type: 'fraction',
-	},
-
-	// And if we need scrollbar
-	scrollbar: {
-		el: '.swiper-scrollbar-hero',
-	},
-});
-const lessonsSlider = new Swiper('.lessons__slider', {
-	// If we need pagination
-
-	pagination: {
-		el: '.hero-swiper-pagination',
-		type: 'fraction',
-	},
-	breakpoints: {
-		// when window width is >= 640px
-		320: {
-			slidesPerView: 1,
+if (document.querySelector('.rev')) {
+	const reviewsSlider = new Swiper('.reviews__slider', {
+		// If we need pagination
+		pagination: {
+			el: '.swiper-pagination',
+			type: 'fraction',
 		},
-		768: {
-			slidesPerView: 2,
-		}
-	},
-	// And if we need scrollbar
-	scrollbar: {
-		el: '.swiper-scrollbar-hero',
-	},
-});
 
-
-const leadersSlider = new Swiper('.leaders__slider', {
-	// If we need pagination	
-	// spaceBetween: 40,
-	breakpoints: {
-		// when window width is >= 640px
-		767: {
-			slidesPerView: 2,
-			// spaceBetween: 60,
+		// Navigation arrows
+		navigation: {
+			nextEl: '.swiper-button-next',
+			prevEl: '.swiper-button-prev',
 		},
-		992: {
-			slidesPerView: 3,
-			// spaceBetween: 20,
-		}
-	},
-	pagination: {
-		el: '.hero-swiper-pagination',
-		type: 'fraction',
-	},
 
-	// And if we need scrollbar
-	scrollbar: {
-		el: '.swiper-scrollbar-hero',
-	},
-});
+		// And if we need scrollbar
+		scrollbar: {
+			el: '.swiper-scrollbar',
+		},
+	});
+}
+if (document.querySelector('.hero__slide')) {
+	const heroSlider = new Swiper('.hero__slider', {
+		// If we need pagination
+		pagination: {
+			el: '.hero-swiper-pagination',
+			type: 'fraction',
+		},
+
+		// And if we need scrollbar
+		scrollbar: {
+			el: '.swiper-scrollbar-hero',
+		},
+	});
+}
+if (document.querySelector('.lessons')) {
+	const lessonsSlider = new Swiper('.lessons__slider', {
+		// If we need pagination
+
+		breakpoints: {
+			// when window width is >= 640px
+			320: {
+				slidesPerView: 1,
+			},
+			768: {
+				slidesPerView: 2,
+			}
+		},
+		// And if we need scrollbar
+		scrollbar: {
+			el: '.swiper-scrollbar_lessons',
+		},
+		navigation: {
+			nextEl: '.swiper-button-next',
+			prevEl: '.swiper-button-prev',
+		},
+	});
+}
+
+if (document.querySelector('.leaders__slide')) {
+	const leadersSlider = new Swiper('.leaders__slider', {
+		// If we need pagination	
+		// spaceBetween: 40,
+		breakpoints: {
+			// when window width is >= 640px
+			768: {
+				slidesPerView: 2,
+				// spaceBetween: 60,
+			},
+			992: {
+				slidesPerView: 3,
+				// spaceBetween: 20,
+			}
+		},
+
+		navigation: {
+			nextEl: '.swiper-button-next',
+			prevEl: '.swiper-button-prev',
+		},
+		pagination: {
+			el: '.swiper-pagination',
+			type: 'fraction',
+		},
+
+		// And if we need scrollbar
+		scrollbar: {
+			el: '.swiper-scrollbar_leaders',
+		},
+	});
+}
 
 
 $.each($('.spoller.active'), function (index, val) {
