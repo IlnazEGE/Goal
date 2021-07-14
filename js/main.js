@@ -129,4 +129,10 @@ $('body').on('click', '.spoller', function (event) {
 	return false;
 });
 
+if (document.querySelector('.training-second__selector')) {
+	$('.training-second__selector').niceSelect();
+	/*document.querySelectorAll('.training-second__selector').forEach(function(selector){
+		
+	});*/
+}
 });
