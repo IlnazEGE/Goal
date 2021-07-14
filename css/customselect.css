@@ -1,0 +1,24 @@
+.customSelect {
+	/* This is the default class that is used */
+	/* Put whatever custom styles you want here */
+	border: 1px solid #30373A;
+	height: 50px;
+	font-size: 18px;
+	line-height: 29px;
+	color: #30373A;
+}
+.customSelect.customSelectHover {
+	/* Styles for when the select box is hovered */
+}
+.customSelect.customSelectOpen {
+	/* Styles for when the select box is open */
+}
+.customSelect.customSelectFocus {
+	/* Styles for when the select box is in focus */
+}
+
+.customSelectInner {
+	/* You can style the inner box too */
+	white-space: nowrap;
+	vertical-align: center;
+}
